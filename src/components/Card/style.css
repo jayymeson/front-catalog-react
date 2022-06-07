@@ -1,0 +1,41 @@
+.card-conteiner {
+    width: 100px;
+    height: 170px;
+    padding: 8px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-conteiner > div {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-around;
+  }
+  
+  .card-conteiner > div > p {
+    margin-top: 15px;
+    font-size: smaller;
+  }
+  
+  .card-conteiner > div > img {
+    width: 50px;
+  }
+  
+  .card-conteiner > h3 {
+    height: 30px;
+    font-size: small;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .card-conteiner > p {
+    font-size: xx-small;
+    height: 35px;
+    margin-bottom: 5px;
+  }
+
+  .card-conteiner > button {
+      border-radius: 30px;
+  }
