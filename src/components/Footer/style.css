@@ -1,0 +1,19 @@
+.footer-conteiner {
+  height: 10vh;
+  background-color: #44cf6c;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.43);
+}
+
+.footer-conteiner > p {
+  width: 15vw;
+  font-size: small;
+  padding-left: 5px;
+  padding-top: 8vh;
+}
+
+.footer-conteiner > img {
+  width: 10vh;
+}

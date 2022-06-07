@@ -10,7 +10,7 @@ const Home = () => {
   const getProducts = async () => {
     const res = await fetch(`${baseURL}product/all-product`);
     const productList = await res.json();
-
+    console.log(productList);
     setShirts(productList);
   };
 
