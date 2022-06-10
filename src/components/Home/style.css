@@ -13,6 +13,10 @@
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
   }
+
+  .home-conteiner > input {
+    margin-bottom: 2rem;
+  }
   
   .home-conteiner > div {
     display: flex;

@@ -5,17 +5,17 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  background-color: #44CF6C;
+  background-color: #44cf6c;
 }
 
-.card-conteiner > div {
+.card-header {
   display: flex;
   width: 100%;
   height: 70px;
   justify-content: space-around;
 }
 
-.card-conteiner > div > p {
+.card-header > p {
   margin-top: 15px;
   font-size: smaller;
 }
@@ -39,4 +39,18 @@
 
 .card-conteiner > button {
   border-radius: 30px;
+  cursor: pointer;
+}
+
+.card-body {
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-body > img {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  cursor: pointer;
 }

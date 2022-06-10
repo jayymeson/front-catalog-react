@@ -1,30 +1,38 @@
 import "./style.css";
-import { useState, useEffect } from "react";
 import Card from "../Card";
+import { useState } from "react";
 
-const Home = () => {
-  const [shirts, setShirts] = useState([]);
+const Home = ({ shirts }) => {
+  const [filteredShirtsList, setfilteredShirtsList] = useState([]);
 
-  const baseURL = "http://localhost:3001/";
-
-  const getProducts = async () => {
-    const res = await fetch(`${baseURL}product/all-product`);
-    const productList = await res.json();
-    console.log(productList);
-    setShirts(productList);
+  const filterShirtsList = (event) => {
+    setfilteredShirtsList(
+      shirts.filter((shirts) => {
+        return shirts.club
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase());
+      })
+    );
   };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
     <div className="home-conteiner">
       <h2>Shirts Available</h2>
+      <input
+        onChange={filterShirtsList}
+        type="text"
+        name=""
+        id=""
+        placeholder="Filter by name"
+      />
       <div>
-        {shirts.map((shirts) => {
-          return <Card key={shirts._id} shirts={shirts} />;
-        })}
+        {filteredShirtsList.length > 0
+          ? filteredShirtsList.map((shirts) => {
+              return <Card key={shirts._id} shirts={shirts} />;
+            })
+          : shirts.map((shirts) => {
+              return <Card key={shirts._id} shirts={shirts} />;
+            })}
       </div>
     </div>
   );

@@ -10,16 +10,24 @@
 }
 
 .header-container > div {
-    display: flex;
-    align-items: center;
-    margin-left: 10vw;
+  display: flex;
+  align-items: center;
+  margin-left: 10vw;
 }
 
-.header-container > div > img {
+.headerTitle-conteiner > img {
+
   height: 10vh;
 }
 
-.header-container > img {
+.headerOptions-conteiner {
+  display: flex;
+}
+
+.headerOptions-conteiner > img {
   height: 6vh;
-  margin-left: 30vw;
+}
+
+.Icon {
+  cursor: pointer;
 }
