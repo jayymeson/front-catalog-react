@@ -16,6 +16,10 @@
 
   .home-conteiner > input {
     margin-bottom: 2rem;
+    height: 2rem;
+    width: 15rem;
+    border-radius: 10px;
+
   }
   
   .home-conteiner > div {

@@ -12,8 +12,8 @@
 }
 
 .modal-conteiner {
-  width: 30vh;
-  height: 30vh;
+  width: 25rem;
+  height: 15rem;
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
@@ -24,7 +24,7 @@
 .modal-conteiner > div {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  margin-bottom: 2rem;
   padding-inline: 0.4rem;
 }
 
@@ -35,8 +35,14 @@
 }
 
 .modal-conteiner > input {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.modal-conteiner > button {
+.button-add {
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rem;
+  cursor: pointer;
 }

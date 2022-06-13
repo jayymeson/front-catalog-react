@@ -1,50 +1,46 @@
-import "./style.css";
-import { useState } from "react";
 import toast from "react-hot-toast";
+import { useState } from "react";
+import "./style.css";
 
-const ModalCreate = ({ closeModal, getProducts }) => {
-  const [club, setClub] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [img, setImg] = useState("");
+const ModalEdit = ({ closeModal, shirts, getProducts }) => {
+  const [club, setClub] = useState(shirts.club);
+  const [price, setPrice] = useState(shirts.price);
+  const [description, setDescription] = useState(shirts.description);
+  const [img, setImg] = useState(shirts.img);
 
   const baseURL = "http://localhost:3001/";
 
-  const handleCreateShirt = async () => {
-    const newShirts = {
+  const handleEditShirt = async () => {
+    const editShirt = {
       club,
       price,
       description,
       img,
     };
 
-    const res = await fetch(`${baseURL}product/register-product`, {
+    const res = await fetch(`${baseURL}product/update-product/${shirts._id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       mode: "cors",
-      body: JSON.stringify(newShirts),
+      body: JSON.stringify(editShirt),
     });
 
-    if (res.status !== 201) {
-      return toast.error("Shirt creation failed!");
+    if (res !== 200) {
+      return toast.error("Editing failed!");
     }
 
-    setClub("");
-    setPrice(0);
-    setDescription("");
-    setImg("");
     closeModal();
     getProducts();
-    toast.success("Shirt successfully added!");
+    toast.success("Shirt updated with sucess");
   };
 
   return (
     <div className="modal-overlay">
       <div className="modal-conteiner">
         <div>
-          <h3>Add new shirt</h3>
+          <h3>Edit shirt</h3>
           <button onClick={closeModal}>X</button>
         </div>
         <input
@@ -59,14 +55,12 @@ const ModalCreate = ({ closeModal, getProducts }) => {
           onChange={(event) => setPrice(event.target.value)}
           name="price"
           type="number"
-          placeholder="Price of shirts"
         />
         <input
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           name="description"
           type="text"
-          placeholder="Description of shirt"
         />
         <input
           value={img}
@@ -75,10 +69,10 @@ const ModalCreate = ({ closeModal, getProducts }) => {
           type="text"
           placeholder="Link of image"
         />
-        <button className="button-add" onClick={handleCreateShirt}>Add</button>
+        <button onClick={handleEditShirt}>Edit</button>
       </div>
     </div>
   );
 };
 
-export default ModalCreate;
+export default ModalEdit;

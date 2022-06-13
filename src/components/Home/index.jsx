@@ -2,7 +2,7 @@ import "./style.css";
 import Card from "../Card";
 import { useState } from "react";
 
-const Home = ({ shirts }) => {
+const Home = ({ shirts, getProducts }) => {
   const [filteredShirtsList, setfilteredShirtsList] = useState([]);
 
   const filterShirtsList = (event) => {
@@ -28,10 +28,22 @@ const Home = ({ shirts }) => {
       <div>
         {filteredShirtsList.length > 0
           ? filteredShirtsList.map((shirts) => {
-              return <Card key={shirts._id} shirts={shirts} />;
+              return (
+                <Card
+                  getProducts={getProducts}
+                  key={shirts._id}
+                  shirts={shirts}
+                />
+              );
             })
           : shirts.map((shirts) => {
-              return <Card key={shirts._id} shirts={shirts} />;
+              return (
+                <Card
+                  getProducts={getProducts}
+                  key={shirts._id}
+                  shirts={shirts}
+                />
+              );
             })}
       </div>
     </div>

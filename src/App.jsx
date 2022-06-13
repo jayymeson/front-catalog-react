@@ -25,7 +25,7 @@ const App = () => {
     <>
       <Toaster position="bottom-center" />
       <Header getProducts={getProducts}/>
-      <Home shirts={shirts} />
+      <Home shirts={shirts} getProducts={getProducts} />
       <Footer />
     </>
   );
