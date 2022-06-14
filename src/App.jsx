@@ -11,7 +11,10 @@ const App = () => {
   const baseURL = "https://api-crud-shirts.herokuapp.com/";
 
   const getProducts = async () => {
-    const res = await fetch(`${baseURL}product/all-product`);
+    const res = await fetch(`${baseURL}product/all-product`, {
+      method: "GET",
+      mode: "cors",
+    });
     const productList = await res.json();
     console.log(productList);
     setShirts(productList);
