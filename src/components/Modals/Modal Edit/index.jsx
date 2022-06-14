@@ -19,7 +19,7 @@ const ModalEdit = ({ closeModal, shirts, getProducts }) => {
     };
 
     const res = await fetch(`${baseURL}product/update-product/${shirts._id}`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -27,7 +27,7 @@ const ModalEdit = ({ closeModal, shirts, getProducts }) => {
       body: JSON.stringify(editShirt),
     });
 
-    if (res !== 200) {
+    if (res.status !== 200) {
       return toast.error("Editing failed!");
     }
 
