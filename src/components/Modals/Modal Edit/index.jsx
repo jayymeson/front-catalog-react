@@ -8,7 +8,7 @@ const ModalEdit = ({ closeModal, shirts, getProducts }) => {
   const [description, setDescription] = useState(shirts.description);
   const [img, setImg] = useState(shirts.img);
 
-  const baseURL = "http://localhost:3001/";
+  const baseURL = "https://api-crud-shirts.herokuapp.com/";
 
   const handleEditShirt = async () => {
     const editShirt = {

@@ -8,7 +8,7 @@ const ModalCreate = ({ closeModal, getProducts }) => {
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
 
-  const baseURL = "http://localhost:3001/";
+  const baseURL = "https://api-crud-shirts.herokuapp.com/";
 
   const handleCreateShirt = async () => {
     const newShirts = {

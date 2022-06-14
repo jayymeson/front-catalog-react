@@ -3,7 +3,7 @@ import "./style.css";
 
 const ModalRemove = ({ closeModal, shirts, getProducts }) => {
   const handleRemoveShirt = async () => {
-    const baseURL = "http://localhost:3001/";
+    const baseURL = "https://api-crud-shirts.herokuapp.com/";
 
     const res = await fetch(`${baseURL}product/delete-product/${shirts._id}`, {
       method: "DELETE",

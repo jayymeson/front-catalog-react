@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [shirts, setShirts] = useState([]);
 
-  const baseURL = "http://localhost:3001/";
+  const baseURL = "https://api-crud-shirts.herokuapp.com/";
 
   const getProducts = async () => {
     const res = await fetch(`${baseURL}product/all-product`);
